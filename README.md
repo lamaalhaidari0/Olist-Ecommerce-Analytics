@@ -158,7 +158,7 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
 | Total Revenue | R$ 13.59M |
 | Repeat Purchase Rate | 3.12% |
 | Late Delivery Rate | 8.11% |
-| Delivery Gap (SP vs RR) | 8 vs 29 days (29x) |
+| Delivery Gap (SP vs RR) | 8 vs 29 days (3.6x) |
 | Late Impact on Reviews | -1.65 points |
 | Dominant Payment | Credit card (74.71%) |
 | Cancellation Rate | 0.63% |
