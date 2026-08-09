@@ -9,7 +9,7 @@ This project analyzes 99,000+ orders from Olist, a Brazilian e-commerce platform
 **Business Impact:**
 - **Revenue Concentration:** Top 5 categories generate ~40% of R$ 13.59M total revenue
 - **Retention Crisis:** Only 3.12% of customers ever purchased twice
-- **Delivery Gap:** 29x difference between fastest (SP: 8 days) and slowest state (RR: 29 days)
+- **Delivery Gap:** 3.6x difference between fastest (SP: 8 days) and slowest state (RR: 29 days)
 - **Satisfaction Risk:** Late deliveries drop review scores from 4.21 to 2.57 (-1.65 pts)
 
 ## Project Structure
