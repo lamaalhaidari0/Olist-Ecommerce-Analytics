@@ -193,5 +193,5 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
 ---
 ## Author:
 Prepared by: Lama Alhaidari
-
+[LinkedIn](https://www.linkedin.com/in/lama-alhaidari0) | [GitHub](https://github.com/lamaalhaidari0)
 *Last Updated: AUG 2026*
