@@ -6,6 +6,11 @@ A data-driven analysis project evaluating sales performance, delivery efficiency
 
 This project analyzes 99,000+ orders from Olist, a Brazilian e-commerce platform, to understand sales trends, delivery bottlenecks, and customer retention challenges. Through Excel exploration, SQL querying, and Power BI visualization, we've identified actionable insights and strategic recommendations.
 
+## Dashboard Preview
+![Executive Summary](screenshots/executive_summary.png)
+![Delivery Performance](screenshots/delivery_performance.png)
+![Customer Analysis](screenshots/customer_analysis.png)
+
 **Business Impact:**
 - **Revenue Concentration:** Top 5 categories generate ~40% of R$ 13.59M total revenue
 - **Retention Crisis:** Only 3.12% of customers ever purchased twice
@@ -15,11 +20,15 @@ This project analyzes 99,000+ orders from Olist, a Brazilian e-commerce platform
 ## Project Structure
 
 ```
-├── sql/Olist_Queries.sql                        # SQL analysis (4 sections, 18 queries)
+├── sql/Olist_Queries.sql                         # SQL analysis (4 sections, 18 queries)
 ├── powerbi/Olist_Dashboard_Analysis.pbix         # Power BI interactive dashboard (3 pages)
 ├── excel/Olist_Excel_Analysis.xlsx               # Excel exploratory analysis
 ├── presentation/Olist_Presentation.pptx          # Executive presentation (10 slides)
-└── README.md                                     # This file
+├── screenshots/
+│   ├── executive_summary.png
+│   ├── delivery_performance.png
+│   └── customer_analysis.png
+└── README.md                                      # This file
 ```
 
 ## Key Files Explained
@@ -45,13 +54,14 @@ Interactive Power BI dashboard with 3 pages:
 **Key Performance Indicators:**
 - **Total Orders** — 99.44K
 - **Total Revenue** — R$ 13.59M
+- **Unique Customers** - 96K 
 - **Avg Delivery Days** — 12.5 (varies 8–29 by state)
 
 **Data Visualizations:**
 - **Monthly Orders (Line Chart)** — Shows strong 2017 growth, 2018 plateau, and November 2017 Black Friday peak at 7,544 orders
 - **Top 5 Categories by Revenue (Bar Chart)** — health_beauty leads at R$1.26M, top 5 = ~40% of total revenue
 - **Orders by State (Map)** — São Paulo alone accounts for 42% of all orders
-- **Avg Delivery Days by State (Bar Chart)** — Roraima at 29 days vs SP at 8 days (29x gap)
+- **Avg Delivery Days by State (Bar Chart)** — RR at 29 days vs SP at 8 days (3.6x gap)
 - **Avg Review by Delivery Status (Clustered Bar)** — On Time = 4.21/5 vs Late = 2.57/5
 - **Delivery Days vs Review Score (Scatter Plot)** — Moderate inverse correlation (CORREL = -0.48)
 - **Customer Retention (Donut Chart)** — 96.88% one-time vs 3.12% repeat customers
@@ -72,7 +82,6 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
 2. **Revenue Concentration**
    - Top 5 categories = ~40% of total revenue (R$ 13.59M)
    - health_beauty leads (R$ 1.26M, 9,670 units)
-   - pcs has highest avg price (~R$ 1,098/item, only 203 units)
 
 3. **Geographic Concentration**
    - São Paulo alone = 42% of all orders
@@ -80,7 +89,7 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
    - Northern states (RR, AP, AC) under 100 orders each
 
 4. **Delivery Performance**
-   - Average 12.5 days overall (SP: 8 vs RR: 29 — 29x gap)
+   - Average 12.5 days overall (SP: 8 vs RR: 29 — 3.6x gap)
    - Late delivery rate: 8.11% (7,826 of 96,470 delivered orders)
    - Orders arrive 11 days before estimated date — deliberately padded promises
 
@@ -110,7 +119,7 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
 ### 4. Dynamic Logistics SLA
 - Localize estimated delivery dates by state instead of one national promise
 - Build fulfillment hubs in northern states
-- Expected Impact: Reduce the 29x delivery gap and improve satisfaction
+- Expected Impact: Reduce the 3.6x delivery gap and improve satisfaction
 
 ### 5. Retention Program
 - Launch customer loyalty program and automated post-purchase retargeting
@@ -145,11 +154,22 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
 ```
 
 ### For Dashboard
-1. Open Power BI Desktop
-2. Open `Olist_Dashboard_Analysis.pbix`
-3. If prompted: connect to SQL Server (`localhost\SQLEXPRESS`, database `Olist`)
-
-## Key Metrics
+1. Install SQL Server Express and SSMS
+2. Download the Olist dataset from Kaggle (link above)
+3. Create a database named `Olist`
+4. Import the CSV files as tables with these names:
+   - orders
+   - order_items
+   - order_payments
+   - order_reviews
+   - customers
+   - products
+   - sellers
+   - category_translation
+   - geolocation (optional — not used in dashboard)
+5. Open Power BI Desktop
+6. Open `Olist_Dashboard_Analysis.pbix`
+7. If prompted: connect to SQL Server (`localhost\SQLEXPRESS`, database `Olist`)
 
 | Metric | Value |
 |--------|-------|
@@ -161,7 +181,7 @@ Exploratory analysis workbook with one sheet per business question (Q1–Q6). Ea
 | Delivery Gap (SP vs RR) | 8 vs 29 days (3.6x) |
 | Late Impact on Reviews | -1.65 points |
 | Dominant Payment | Credit card (74.71%) |
-| Cancellation Rate | 0.63% |
+
 
 ## Data Source
 
